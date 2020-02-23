@@ -291,8 +291,8 @@ namespace Demo.Controllers
         {
 
             string today = DateTime.Today.ToString();
-            string date = "05/29/2019";
-            var game = await gameData.GetCurrentGame(date);
+           // string date = "05/29/2019";
+            var game = await gameData.GetCurrentGame(today);
             return game;
   
         }
