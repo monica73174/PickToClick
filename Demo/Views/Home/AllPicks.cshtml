@@ -1,0 +1,7 @@
+﻿@model List<PickDetail>
+@foreach (var p in Model)
+{
+    <div class="row">
+        <div class="col-4">@p.DateOfGame</div><div class="col-8">@p.FirstName @p.LastName</div>
+    </div>
+}

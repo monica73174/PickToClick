@@ -1,0 +1,16 @@
+﻿
+
+        <div class="row">
+            <div class="col-5">Last 10 picks </div><div class="col-7 text-right"></div>
+            <div class="col-12"><hr /></div>
+            
+        </div>
+
+        @foreach (var p in Model.LastTenPicks)
+        {
+            <div class="row">
+                <div class="col-4">@p.DateOfGame</div><div class="col-8">@p.FirstName @p.LastName</div>
+                </div>
+                }
+
+

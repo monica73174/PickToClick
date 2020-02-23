@@ -1,0 +1,17 @@
+﻿@model PickToClick
+
+<form asp-action="PickToClickForm" asp-controller="Home" method="post">
+    <table>
+        <thead>
+        <tr><th></th><th>Player</th><th>Vs Pitcher</th></tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model.Players)
+        {
+            <tr><td><input type="radio" asp-for="PlayerId" value="@p.Id"  /></td><td>@p.FirstName @p.LastName</td><td></td></tr>
+        }
+            <input type="hidden" asp-for="GameId" />
+        </tbody>
+    </table>
+    <button>Save</button>
+</form>

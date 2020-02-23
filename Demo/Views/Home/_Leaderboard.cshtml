@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Participant>
+
+
+    <div class="row">
+        <div class="col-3">Rank</div><div class="col-6">Participant</div><div class="col-3">Points</div>
+        @foreach (var p in Model)
+        {
+            <div class="col-3">1</div><div class="col-6">@p.FirstName @p.LastName</div><div class="col-3">456</div>
+        }
+    </div>
+

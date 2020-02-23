@@ -1,0 +1,59 @@
+﻿@model Demo.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="card-deck">
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-6"> <h5 class="card-title"> <i class="fas fa-user"></i> Profile</h5></div> <div class="col-6 text-right"><a asp-action="ProfileForm">Edit Profile</a></div>
+                </div>
+            </div>
+                <div class="card-body">                   
+                <partial name="_ProfileCard" model="@Model.Participant" />
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-6"><h5 class="card-title"><i class="fas fa-baseball-ball"></i>  Pick To Click</h5></div><div class="col-6 text-right"><a asp-action="AllPicks">View All</a></div>
+                    
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    @if (Model.CurrentGameId != 0)
+                    {
+                        <div class="col-4"><a asp-action="PickToclickForm" asp-controller="Home">Make Pick</a></div><div class="col-8">@Model.Pick.FirstName @Model.Pick.LastName</div>
+                    }
+                    else
+                    {
+
+                        <div class="col-12">No game today</div>
+                    }
+                </div>
+                <hr />
+                <partial name="_PickToclick" />
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-7">
+                        <h5 class="card-title"><i class="fas fa-trophy"></i> Leaderboard</h5>
+                    </div>
+                    <div class="col-5 text-right"><a asp-action="Leaderboard">View All</a></div>
+                </div>
+            </div>
+            <div class="card-body">
+                
+                <partial name="_Leaderboard" model="@Model.LeaderBoard" />
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+
+

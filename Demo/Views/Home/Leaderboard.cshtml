@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Participant>
+<div class="card">
+    <div class="card-header alert-primary"><i class="fas fa-trophy fa-4x"></i>Pick to Click Leaderboard</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-1">Rank</div>
+            <div class="col-8">Participant</div>
+            <div class="col-3">Points</div>
+        </div>
+        @foreach (var p in Model)
+        {
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-8">@p.FirstName @p.LastName</div>
+            <div class="col-3"></div>
+        </div>
+        }
+    </div>
+    <div class="card-footer"></div>
+
+</div>
